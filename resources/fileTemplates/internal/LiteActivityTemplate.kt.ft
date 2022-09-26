@@ -1,0 +1,29 @@
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}#end
+
+${IMPORT}
+${IMPORT_BINDING}
+
+/**
+ * @author ${USER}
+ * @date Created on ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ * @Description ${NAME} - 描述
+ */
+class ${NAME} : ${SUPPORT}, LiteListener {
+
+    private val lite: ${LITE_NAME} by liteBind()
+
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        ${IMPORT_BINDING_METHOD}
+        lite.listener {
+            //it.parameter 用State数据，做你想做的事。
+        }
+
+        lite.listener(${LITE_NAME}.State::parameter) {
+            //it 等价于 parameter, 单独监听数据
+        }
+
+        lite.init()
+    }
+}

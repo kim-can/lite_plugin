@@ -1,0 +1,35 @@
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}#end
+
+${IMPORT}
+${IMPORT_BINDING}
+
+/**
+ * @author ${USER}
+ * @date Created on ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ * @Description ${NAME} - 描述
+ */
+public class ${NAME} extends ${SUPPORT} implements LiteJavaListener {
+
+    BindListener bindListener = LiteJavaComponent.bindListener(this);
+    ${IMPORT_BINDING_1}
+    ${IMPORT_BINDING_2}
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        ${LITE_NAME} lite = LiteJavaComponent.of(this).liteBind(${LITE_NAME}.class);
+
+        bindListener.listener(lite, it -> {
+            //it.parameter 用State数据，做你想做的事。
+        });
+
+        bindListener.listener(lite,${LITE_NAME}.State::getParameter ,it -> {
+            //it 等价于 parameter, 单独监听数据
+        });
+
+        lite.init();
+    }
+    ${IMPORT_BINDING_3}
+}

@@ -1,0 +1,24 @@
+#if (${PACKAGE_NAME} && ${PACKAGE_NAME} != "")package ${PACKAGE_NAME}#end
+
+import com.boss.android.lite.Lite
+import com.boss.android.lite.LiteState
+
+/**
+ * @author ${USER}
+ * @date Created on ${YEAR}-${MONTH}-${DAY} ${TIME}
+ * @version 1.0
+ * @Description ${NAME} - 描述
+ */
+class ${NAME}(initialState: State) : Lite<${NAME}.State>(initialState = initialState) {
+
+    data class State(
+        //TODO change you parameter
+        val parameter: String = ""
+    ) : LiteState
+
+    fun init() = async {
+        TODO("Not yet implemented")
+        //call api     -> val result = repository.init(parameter)
+        //change state -> changeState { copy(parameter="init") }
+    }
+}
