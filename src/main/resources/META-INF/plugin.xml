@@ -1,0 +1,59 @@
+<idea-plugin>
+    <id>com.boss.android.lite.plugin</id>
+    <name>Lite</name>
+    <vendor email="jincan@kanzhun.com" url="https://github.com/skyJinc/lite_plugin">Kotlin And Java Class Code Generate</vendor>
+
+    <description><![CDATA[
+      <em>
+            <b>Lite auxiliary tools - Lite辅助工具 </b>
+            <ul>
+                <li>Quickly create Lite files - 快速创建Lite文件</li>
+                <li>Quickly generate Lite code - 快速生成Lite代码</li>
+            </ul>
+            <b>Lite shortcut keys - Lite快捷键</b>
+            <ul>
+                <li>mac os: command + N </li>
+                <li>mac os: input code "liteGenerate"</li>
+            </ul>
+      </em>
+    ]]></description>
+
+    <!-- 版本更新信息-->
+    <change-notes><![CDATA[
+            <em>
+            <b>1.0.1</b> (10/03/2022)
+            <ul>
+                <li>Project structure update, converted to Gradle build - 项目结构更新，转换位 Gradle 构建</li>
+                <li>Package name read optimization - 包名读取优化</li>
+            </ul>
+            </em>
+            <em>
+            <b>1.0.0</b> (09/25/2022)
+            <ul>
+                <li>Quickly create com.boss.android.lite files - 快速创建 com.boss.android.lite 文件</li>
+                <li>Support live template code generation - 支持实时模板代码生成</li>
+            </ul>
+            </em>
+        ]]>
+    </change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <internalFileTemplate name="LiteTemplate.kt"/>
+        <internalFileTemplate name="LiteActivityTemplate.kt"/>
+        <internalFileTemplate name="LiteFragmentTemplate.kt"/>
+
+        <defaultLiveTemplates file="/liveTemplates/lite.xml"/>
+    </extensions>
+
+    <actions>
+        <action id="LiteFileAction" class="com.boss.android.lite.plugin.file.NewFileAction" icon="/icons/lite_16.png"
+                text="LiteFile" description="Create Lite File">
+            <add-to-group group-id="NewGroup" anchor="first"/>
+        </action>
+    </actions>
+
+</idea-plugin>
