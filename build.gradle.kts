@@ -16,21 +16,18 @@ kotlin {
     }
 }
 
-dependencies {
-    implementation(kotlin("stdlib"))
-}
-
-
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
     //https://www.jetbrains.com/intellij-repository/releases/
-    version.set("211.7628.21")
-    // Use IntelliJ IDEA CE because it's the basis of the IntelliJ Platform:
-    type.set("IC")
-
+    version.set("2021.1.1")
     // Require the Android plugin (Gradle will choose the correct version):
-    plugins.set(listOf("android"))
+    plugins.set(listOf("android","java","Kotlin"))
 }
+
+tasks.patchPluginXml {
+    untilBuild.set("")
+}
+
 
 tasks {
     runIde {

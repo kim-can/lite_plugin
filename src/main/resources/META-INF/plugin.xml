@@ -39,6 +39,7 @@
 
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.android</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
@@ -47,6 +48,23 @@
         <internalFileTemplate name="LiteFragmentTemplate.kt"/>
 
         <defaultLiveTemplates file="/liveTemplates/lite.xml"/>
+
+
+        <codeInsight.lineMarkerProvider
+                language="kotlin"
+                implementationClass="com.boss.android.lite.plugin.idea.LiteLineMarkerProvider"/>
+
+        <codeInsight.lineMarkerProvider
+                language="JAVA"
+                implementationClass="com.boss.android.lite.plugin.idea.LiteLineMarkerProvider"/>
+
+        <codeInsight.lineMarkerProvider
+                language="kotlin"
+                implementationClass="com.boss.android.lite.plugin.idea.LiteAsyncLineMarkerProvider"/>
+
+        <codeInsight.lineMarkerProvider
+                language="JAVA"
+                implementationClass="com.boss.android.lite.plugin.idea.LiteAsyncLineMarkerProvider"/>
     </extensions>
 
     <actions>

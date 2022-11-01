@@ -13,7 +13,7 @@ class ${NAME} : ${SUPPORT}, LiteListener {
 
     private val lite: ${LITE_NAME} by liteBind()
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState, persistentState)
         ${IMPORT_BINDING_METHOD}
         lite.listener {

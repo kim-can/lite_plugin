@@ -1,7 +1,5 @@
 package com.boss.android.lite.plugin.file
 
-import com.android.tools.idea.projectsystem.getModuleSystem
-import com.android.tools.idea.projectsystem.sourceProviders
 import com.boss.android.lite.plugin.utils.LiteConfig.Companion.instance
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -9,19 +7,14 @@ import com.intellij.openapi.actionSystem.LangDataKeys
 import com.intellij.openapi.actionSystem.LangDataKeys.IDE_VIEW
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.ui.Messages
 import com.intellij.openapi.ui.Messages.getInformationIcon
 import com.intellij.openapi.ui.Messages.showMessageDialog
 import com.intellij.psi.JavaDirectoryService
 import com.intellij.psi.PsiDirectory
-import com.intellij.psi.PsiManager
-import org.jetbrains.android.dom.manifest.Manifest
 import org.jetbrains.android.dom.manifest.getPrimaryManifestXml
 import org.jetbrains.android.facet.AndroidFacet
 import org.jetbrains.android.facet.AndroidRootUtil
-import org.jetbrains.android.facet.ResourceFolderManager
 import org.jetbrains.android.util.AndroidUtils
-import org.jetbrains.kotlin.idea.core.util.toPsiDirectory
 
 
 class NewFileAction : AnAction() {
